@@ -95,7 +95,7 @@
     color: #fff;
 }
 
-#btnTake, #btnStop{
+#btnPlayer1, #btnPlayer2, #btnStop{
     font-weight: 600;
     color: var(--gold-color);
 }
@@ -105,7 +105,12 @@
     transform: translateY(-1px)
 }
 
-#btnTake:hover{
+#btnPlayer1:hover{
+    cursor: pointer;
+    transform: translateY(-1px)
+}
+
+#btnPlayer2:hover{
     cursor: pointer;
     transform: translateY(-1px)
 }
