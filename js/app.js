@@ -15,7 +15,7 @@ const main = () => {
     // -- DOM vairables -- 
 
     const btnNew = document.querySelector('#btnNew'),
-            btnTake = document.querySelector('#btnTake'),
+            btnPlayer1 = document.querySelector('#btnPlayer1'),
             btnStop = document.querySelector('#btnStop'),
 
             pPointsElement = document.querySelectorAll('small'),
@@ -82,13 +82,13 @@ const main = () => {
         if( playerPoints > 21){
 
             console.warn('Game over... you lost')
-            btnTake.disabled = true
+            btnPlayer1.disabled = true
             btnStop.disabled = true
             npcLogic( deck, playerPoints )
 
         } else if( playerPoints === 21 ){
             console.warn('21, ¡GREAT!')
-            btnTake.disabled = true
+            btnPlayer1.disabled = true
             btnStop.disabled = true
             npcLogic( deck, playerPoints )
         }
@@ -128,7 +128,8 @@ const main = () => {
         pPointsElement.forEach( elem => elem.innerText = 0)
         divPlayerCards.forEach(elem => elem.innerHTML = '')
 
-        btnTake.disabled = false
+        btnPlayer1.disabled = false
+        btnPlayer2.disabled = true
         btnStop.disabled = false
         return deck
     }
@@ -234,12 +235,12 @@ const main = () => {
         initializingGame()
     })
     
-    btnTake.addEventListener( 'click', () => {
+    btnPlayer1.addEventListener( 'click', () => {
         playerLogic()
     })
 
     btnStop.addEventListener( 'click', () => {
-        btnTake.disabled = true
+        btnPlayer1.disabled = true
         btnStop.disabled = true
 
         npcLogic(newDeck, playersPoints[0])
